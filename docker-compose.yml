@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    environment: 
+      - AWS_DEFAULT_REGION=us-east-1
+      - EDGE_PORT=4566
+      - SERVICES=sqs
+      - AWS_ACCESS_KEY_ID=mockKey
+      - AWS_SECRET_ACCESS_KEY=mockSecret
+    ports:
+      - '4566:4566'
